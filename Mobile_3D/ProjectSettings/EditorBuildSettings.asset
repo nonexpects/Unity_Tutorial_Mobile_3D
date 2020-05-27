@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MedievalTownExteriors/Scenes/Demo.unity
+    guid: e07f2e400a2d7164988fa11609016066
   m_configObjects: {}

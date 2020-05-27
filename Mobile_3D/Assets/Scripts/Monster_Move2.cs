@@ -8,10 +8,10 @@ using UnityEngine.AI;
 public class Monster_Move2 : MonoBehaviour
 {
     public int monster_Energy = 5;
-    public NavMeshAgent Monster_Agent;
-    public Animator animator;
     public Transform heroTr;
     private WaitForSeconds wfs;
+    public NavMeshAgent Monster_Agent;
+    public Animator animator;
     public Vector3 targetPosition;
 
     private void OnEnable()
@@ -60,16 +60,15 @@ public class Monster_Move2 : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter(Collision collision)
     {
-        if (coll.collider.CompareTag("MISSILE"))
+        if (collision.collider.CompareTag("MISSILE"))
             monster_Energy -= 1;
 
         if (monster_Energy < 0)
         {
             Destroy(this.gameObject, 0.1f);
-            //GameManager.instance.UpgradeScore();
-
+            GameManager.instance.UpgradeScore();
 
         }
 

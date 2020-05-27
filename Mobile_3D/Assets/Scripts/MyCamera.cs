@@ -20,6 +20,7 @@ public class MyCamera : MonoBehaviour
         target = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 pos = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * cameraSpeed);
 
+        transform.rotation = target.rotation;
         transform.position = pos;
     }
 }

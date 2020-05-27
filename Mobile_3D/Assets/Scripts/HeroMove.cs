@@ -11,6 +11,7 @@ public class HeroMove : MonoBehaviour
     float lastTime;
 
     Animator mAvatar;
+    AudioSource shootSound;
 
     public Transform missile_pos;
     public GameObject Hero_Missile;
@@ -26,6 +27,7 @@ public class HeroMove : MonoBehaviour
     private void Start()
     {
         mAvatar = GetComponent<Animator>();
+        shootSound = GetComponent<AudioSource>();
     }
 
     public void OnJumpBtnDown()
@@ -54,6 +56,7 @@ public class HeroMove : MonoBehaviour
 
     public void OnMissileShootDown()
     {
+        shootSound.Play();
         GameObject imsy = Instantiate(missile_effect, missile_pos.position, missile_pos.rotation);
         Destroy(imsy, 0.5f);
     }
